@@ -37,4 +37,5 @@ for c in phone_num:
 
 phone_num = [phone_num[0:3], phone_num[3:6], phone_num[6:]]
 print(parenthesis_format(phone_num))
+
 print(periods_format(phone_num))
