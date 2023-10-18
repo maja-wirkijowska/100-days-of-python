@@ -1,31 +1,29 @@
-def encrypt(send, num):
-    alphanumeric = list("abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+def encrypt(letters_nums, send, num):
     encoded = []
-    shifted_letters_nums = shift(num)
+    shifted_letters_nums = shift(letters_nums, num)
     for letter in send:
-        index = alphanumeric.index(letter)
+        index = letters_nums.index(letter)
         encoded.append(shifted_letters_nums[index])
     return encoded
 
-def decrypt(receive, num):
-    alphanumeric = list("abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+def decrypt(letters_nums, receive, num):
     decoded = []
-    shifted_letters_nums = shift(num)
+    shifted_letters_nums = shift(letters_nums, num)
     for letter in receive:
         index = shifted_letters_nums.index(letter)
-        decoded.append(alphanumeric[index])
+        decoded.append(letters_nums[index])
     return decoded
 
-def shift(shift_amount):
-    alphanumeric = list("abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+def shift(letters_nums, shift_amount):
     shifted_letters_nums = []
-    end = alphanumeric[:shift_amount]
-    front = alphanumeric[shift_amount:]
+    end = letters_nums[:shift_amount]
+    front = letters_nums[shift_amount:]
     shifted_letters_nums = front + end
     return shifted_letters_nums
 
 
 print("Caesar Cypher")
+alphanumeric = list("abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 keep_going = True
 while keep_going:
     option = input("Type \'e\' to encrypt and \'d\' to decrypt: ")  
@@ -38,11 +36,11 @@ while keep_going:
     shift_num = int(input("Enter a shift amount: "))
     
     if option == "e":
-        encoded_message = encrypt(message, shift_num)
+        encoded_message = encrypt(alphanumeric, message, shift_num)
         encoded_message = "".join(encoded_message)
         print(f"Your encoded message is: {encoded_message}")
     elif option == "d":
-        decoded_message = decrypt(message, shift_num)
+        decoded_message = decrypt(alphanumeric, message, shift_num)
         decoded_message = "".join(decoded_message)
         print(f"You decoded message is: {decoded_message}")
                 
