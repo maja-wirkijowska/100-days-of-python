@@ -8,3 +8,4 @@
 5. Translates a phone number that contains letters into two formats containing only numbers
 6. Hangman game
 7. Caesar Cypher  
+8. Silent Auction App

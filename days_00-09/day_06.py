@@ -14,6 +14,8 @@ flag = True
 
 while "_" in display and lives > 0:
     guess = input("Guess a letter: ").lower()
+    if len(guess) != 1:
+        continue
     if guess == "end":
         break
     for position in range(len(chosen_word)):
