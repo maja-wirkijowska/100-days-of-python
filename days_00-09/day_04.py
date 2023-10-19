@@ -1,5 +1,6 @@
 import random
 
+
 def create_new_password(total_capital, total_little, total_symbols, total_nums):
     uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     lowercase_letters = "abcdefghijklmnopqrstuvwxyz"
@@ -8,21 +9,22 @@ def create_new_password(total_capital, total_little, total_symbols, total_nums):
     genned_password = []
     for i in range(0, total_capital):
         j = random.randint(0, len(uppercase_letters) - 1)
-        genned_password.append(uppercase_letters[j])   
-    
+        genned_password.append(uppercase_letters[j])
+
     for i in range(0, total_little):
         j = random.randint(0, len(lowercase_letters) - 1)
-        genned_password.append(lowercase_letters[j]) 
-    
+        genned_password.append(lowercase_letters[j])
+
     for i in range(0, total_symbols):
         j = random.randint(0, len(special_chars) - 1)
-        genned_password.append(special_chars[j])     
+        genned_password.append(special_chars[j])
 
     for i in range(0, total_nums):
         j = random.randint(0, len(numbers) - 1)
-        genned_password.append(numbers[j]) 
-      
+        genned_password.append(numbers[j])
+
     return genned_password
+
 
 print("Welcome to the password generator!")
 num_total_chars = int(input("How many total characters do you need in your password? "))

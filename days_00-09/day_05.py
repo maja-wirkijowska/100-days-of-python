@@ -16,20 +16,23 @@ def letter_to_number(c):
     elif c in "WXYZ":
         return "9"
 
-def parenthesis_format(phone_num):
-    return "(" + phone_num[0] + ") " + phone_num[1] + "-" + phone_num[2]
 
-def periods_format(phone_num):
+def parenthesis_format(num):
+    return "(" + num[0] + ") " + num[1] + "-" + num[2]
+
+
+def periods_format(num):
     seperator = "."
-    return seperator.join(phone_num)
-    
+    return seperator.join(num)
+
+
 phone_num = input("Enter a 10-digit phone number without punctuation: ")
 while not phone_num.isalnum():
     phone_num = input("Make sure to enter a number without punctuation: ")
-    
+
 while len(phone_num) != 10:
     phone_num = input("Be sure to enter a 10-digit phone number: ")
-    
+
 phone_num = phone_num.upper()
 for c in phone_num:
     if c.isupper():

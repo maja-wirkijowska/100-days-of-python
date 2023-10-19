@@ -1,4 +1,4 @@
-print("Welcom to choose the treasure hunt!")
+print("Welcome to choose the treasure hunt!")
 left_or_right = input("You come to a fork in the road. Do you want to go left or right? ")
 if left_or_right == "right":
     print("Game over")
