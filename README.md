@@ -9,3 +9,5 @@
 6. Hangman game
 7. Caesar Cypher  
 8. Silent Auction App
+9. Calculator
+10. Binary search
