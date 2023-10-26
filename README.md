@@ -11,3 +11,8 @@
 8. Silent Auction App
 9. Calculator
 10. Binary search
+11. Number Guessing Game
+12. FizzBuzz
+13. Periodic Elements Quiz
+14. Coffee Machine
+15. Coffee Machine - using OOP
