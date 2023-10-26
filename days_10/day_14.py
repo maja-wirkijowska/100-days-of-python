@@ -37,6 +37,8 @@ def enough_coins_to_make_change(available_coins, change_needed):
         if needed[coin] > available_coins[coin]:
             print(f"Not enough of {coin} coins to process transaction.")
             return False
+        else:
+            available_coins[coin] -= needed[coin]
     return True
 
 
@@ -47,6 +49,13 @@ def is_resource_sufficient(needed_ingredients):
             print(f"Not enough {item}")
             return False
     return True
+
+
+def add_coins(available_coins, total_paid):
+    list_coins = list(count_coins(total_paid))
+    new_coins = {"quarters": list_coins[0], "dimes": list_coins[1], "nickels": list_coins[2], "pennies": list_coins[3]}
+    for coin in new_coins:
+        available_coins[coin] += new_coins[coin]
 
 
 def process_paid_coins():
@@ -96,9 +105,9 @@ while is_on:
         print_report()
     else:
         drink = MENU[choice]
-
         if is_resource_sufficient(drink["ingredients"]):
             payment = process_paid_coins()
+            add_coins(coins, payment)
             if is_transaction_successful(payment, drink["cost"]):
                 make_coffee(choice, drink["ingredients"])
 
