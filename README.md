@@ -16,3 +16,8 @@
 13. Periodic Elements Quiz
 14. Coffee Machine
 15. Coffee Machine - using OOP
+16. true/false quiz
+17. working with turtle module
+18. etch_a_sketch and turtle race
+19. snake game part 1
+20. snake game part 2
